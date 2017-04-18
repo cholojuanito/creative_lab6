@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Preferences</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <style>
+      body         { padding-top:80px; word-wrap:break-word; }
+  </style>
+  <!--<link rel="stylesheet" type="text/css"
+      href="/static/css/styles.css" /> -->
+</head>
+<body>
+  <div class="container" ng-controller="myController">
+    <div class="page-header text-center">
+        <h1>User Preferences</h1>
+        <a href="/" class="btn btn-default">Home</a>
+        <a href="/logout" class="btn btn-default">Logout</a>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="well">
+              <form method="POST" action="/user/update">
+
+                <div class="form-group">
+                  <label>Username:</label>
+                  <input type="text" name="username" class="form-control"
+                    ng-model="user.username" disabled>
+                </div>
+                <div class="form-group">
+                  <label>Avatar URL:</label>
+                  <input type="text" name="avatarURL" class="form-control"
+                    ng-model="user.avatarURL">
+                </div>
+                <div class="form-group">
+                  <label>Email:</label>
+                  <input type="email" name="email" class="form-control"
+                    ng-model="user.email">
+                </div>
+                <div class="form-group">
+                  <label>Favorite Quote:</label>
+                  <input type="text" name="quote" class="form-control"
+                    ng-model="user.quote">
+                </div>
+                <div class="form-group">
+                  <label>Favorite Color:</label>
+                  <input type="text" name="color" class="form-control"
+                    ng-model="user.color">
+                </div>
+
+                <input type="submit" class="btn btn-warning btn-lg" value="Save">
+            </form></br>
+            <form method="POST" action="/user/delete">
+              <input type="submit" class="btn btn-default" value="Delete User">
+            </form>
+        </div>
+      </div>
+  </div>
+</div>
+<script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+<script src="/static/js/my_app.js"></script>
+</body>
+</html>

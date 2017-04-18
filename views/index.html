@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <style>
+      body         { padding-top:80px; word-wrap:break-word; }
+  </style>
+  <!--<link rel="stylesheet" type="text/css"
+      href="/static/css/styles.css" /> -->
+</head>
+<body>
+  <div class="container" ng-controller="myController">
+    <div class="alert alert-success">
+      <%= msg %>
+    </div>
+    <div class="page-header text-center">
+        <h1> Welcome <%= username %>!</h1>
+        <a href="/user" class="btn btn-default">Edit Preferences</a>
+        <a href="/logout" class="btn btn-default">Logout</a>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+            <div class="well">
+                <img src= <%= avatarURL%>>
+                <h3> Account Info</h3>
+                <hr><h3>Username: <%= username %></h3>
+                <hr><h3>Email: <%= email %></h3>
+                <hr><h3>Quote: <%= quote %></h3>
+                <hr><h3>Color: <%= color %></h3>
+            </div>
+            <!--<div class="well">
+                <a href="/comments" class="btn btn-default">Comment Page</a>
+            </div>-->
+      </div>
+    </div>
+    <div class="text-center">
+        <p><%= username %>'s Profile</p>
+    </div>
+
+
+  </div>
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="/static/js/my_app.js"></script>
+</body>
+</html>
